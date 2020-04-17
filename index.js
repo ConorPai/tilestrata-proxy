@@ -42,6 +42,9 @@ module.exports = function(options) {
 				}
 				finalRequestHeaders['Accept-Encoding'] = req.headers['accept-encoding'];
 			}
+			
+			//防止请求被禁止
+			finalRequestHeaders['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4115.5 Safari/537.36';
 
 			var requestURI;
 			if (typeof uri === 'function') {
